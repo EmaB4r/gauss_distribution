@@ -22,7 +22,7 @@ double square(double x){
 }
 
 double gaussian(double x, double deviation, double average) {
-    double exponent = -((x - average) * (x - average)) / (2 * deviation * deviation);
+    double exponent = -square(x - average) / (2 * square(deviation));
     double numerator = exp(exponent);
     return numerator / (deviation * sqrt(2 * PI));
 }
